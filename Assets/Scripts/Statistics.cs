@@ -8,18 +8,14 @@ using System.Linq;
 public class Statistics : MonoBehaviour
 {
 
-    public enum WhatThis { None, Player, Monster , Creep };
-    public enum ThisTeam { None, Red, Blue };
 
 
     [Header("Informações")]
-    [SerializeField] private string thisName = "None";
+    public string thisName = "None";
     [Space(5)]
-    [SerializeField] private WhatThis whatThis;
+    [SerializeField] private Class whatThis;
     [Space(5)]
-    [SerializeField] private ThisTeam thisTeam;
-    [Space(5)]
-    [SerializeField] private CharacterClass thisClass;
+    [SerializeField] private Team thisTeam;
     [Space(5)]
     public string thisIndex = "I'M-TEAM-NAME-INDEX";
     SceneManager sceneManager;
@@ -95,7 +91,7 @@ public class Statistics : MonoBehaviour
             mana = maxMana;
         }
     }
-    public void TakeDamage(int damage, DamageType dType)
+    public void TakeDamage(int damage, DamageType dType, string name)
     {
         float finalDamage = 0;
         float resistance = 0;
@@ -128,13 +124,13 @@ public class Statistics : MonoBehaviour
             finalDamage = 1.0f;
         }
         health -= Mathf.RoundToInt(finalDamage);
-        print($"{thisName} sofreu {Mathf.RoundToInt(finalDamage)} de {dType}.");
+        print($"{thisName} sofreu {Mathf.RoundToInt(finalDamage)} de {dType} de {name}");
         if (health <= 0)
         {
             Destroy(this.gameObject);
         }
     }
-    string GenerateIndex(WhatThis whatThis, ThisTeam thisTeam)
+    string GenerateIndex(Class whatThis, Team thisTeam)
     {
         string w = whatThis.ToString();
         string t = thisTeam.ToString();

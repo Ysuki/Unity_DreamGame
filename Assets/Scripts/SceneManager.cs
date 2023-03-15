@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public enum DamageType { True_Damage, Physical_Damage, Magic_Damage };
-public enum CharacterClass { None, Warrior, Tank, Suport, Assasin, Mage };
+public enum Team { None, Red, Blue };
+public enum Class { None, Player, Monster, Creep };
+
+
 public class SceneManager : MonoBehaviour
 {
     public string[] scenePlayersIds = new string[] { };
