@@ -22,7 +22,8 @@ public class Statistics : MonoBehaviour
 
     [Space(20)]
     [Header("Estatisticas Basicas")]
-
+    [Space(5)]
+    public int level = 1;
     [Space(5)]
     [Header("Vida/Mana")]
     public int health = 0;

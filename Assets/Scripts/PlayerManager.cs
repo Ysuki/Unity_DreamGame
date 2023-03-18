@@ -5,28 +5,35 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
 
+    [Header("Skills")]
 
-    [SerializeField] private KeyCode jumpInput;
-    [SerializeField] private KeyCode runInput;
+    public GameObject cooldown_1;
     [SerializeField] private KeyCode skill_1_Input;
-    [SerializeField] private KeyCode skill_2_Input;
-    [SerializeField] private KeyCode skill_3_Input;
-    [SerializeField] private KeyCode skill_4_Input;
-    [SerializeField] private KeyCode basicAttackInput;
-
-    public bool jump;
-    public bool run;
     public bool skill_1;
+    public int skill_1_Cooldown;
+    [SerializeField] private KeyCode skill_2_Input;
     public bool skill_2;
+    public int skill_2_Cooldown;
+    [SerializeField] private KeyCode skill_3_Input;
     public bool skill_3;
+    public int skill_3_Cooldown;
+    [SerializeField] private KeyCode skill_4_Input;
     public bool skill_4;
+    public int skill_4_Cooldown;
+
+
+
+
+
+
+
+    [Header("Other")]
+    [SerializeField] public KeyCode basicAttackInput;
     public bool basicAttack;
-
-
-
-
-
-
+    [SerializeField] private KeyCode jumpInput;
+    public bool jump;
+    [SerializeField] private KeyCode runInput;
+    public bool run;
 
     void Update()
     {
